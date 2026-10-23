@@ -1,0 +1,6 @@
+# dsh-composer-scratchpad bundle patch: insert the plugin into a profile's layer stack.
+# This is what lets `plugin_manager` / `dsh plugin add` mount the plugin without the
+# user editing the profile by hand.
+- insert:
+    - id: dsh-composer-scratchpad
+      name: 'dsh-composer-scratchpad'

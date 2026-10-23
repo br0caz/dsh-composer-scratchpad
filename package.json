@@ -1,0 +1,65 @@
+{
+  "name": "dsh-composer-scratchpad",
+  "version": "0.2.0",
+  "description": "A one-box scratchpad pinned to the DSH composer: type an idea without sending it. Enter only breaks the line, the draft lives in localStorage and is shared by every session.",
+  "license": "MIT",
+  "author": "br0caz <245381891+br0caz@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/br0caz/dsh-composer-scratchpad.git"
+  },
+  "homepage": "https://github.com/br0caz/dsh-composer-scratchpad#readme",
+  "bugs": {
+    "url": "https://github.com/br0caz/dsh-composer-scratchpad/issues"
+  },
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./client.js": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "screenshots",
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "scratchpad",
+    "notes",
+    "composer",
+    "notepad"
+  ],
+  "scripts": {
+    "test": "node tests/smoke.cjs",
+    "check": "node --check client.js && node --input-type=module --check < index.js"
+  },
+  "dsh": {
+    "id": "dsh-composer-scratchpad",
+    "name": "Composer Scratchpad",
+    "version": "0.2.0",
+    "permissions": "client-side control in the composer tool row",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.0",
+    "node": ">=18"
+  }
+}
